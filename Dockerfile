@@ -3,8 +3,10 @@ FROM alpine
 WORKDIR /app
 ADD test.sh /app/test.sh
 
-RUN echo $name
+ARG myname
 
-RUN export name=$name && chmod +x  "/app/test.sh" && sh -c "/app/test.sh"
+RUN echo $myname
 
-CMD [ "echo $name" ]
+RUN export name=$myname && chmod +x  "/app/test.sh" && sh -c "/app/test.sh"
+
+CMD [ "echo $myname" ]
