@@ -1,10 +1,10 @@
 FROM alpine
 
 WORKDIR /app
-ADD test.sh test.sh
+ADD test.sh /app/test.sh
 
 RUN echo $name
 
-RUN export name=$name && sh -c "test.sh"
+RUN export name=$name && chmod +x  "/app/test.sh" && sh -c "/app/test.sh"
 
 CMD [ "echo $name" ]
