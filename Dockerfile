@@ -1,5 +1,5 @@
 FROM alpine
 
-RUN echo $NAME
+RUN echo $name
 
-CMD [ "echo $NAME" ]
+CMD [ "echo $name" ]

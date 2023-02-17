@@ -35,4 +35,4 @@ jobs:
           echo $name
       - name: docker build
         run: |
-          docker build .
+          docker build --build-args name=$name .
